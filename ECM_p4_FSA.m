@@ -58,3 +58,10 @@ plot(N,v)
 title('v(t)')
 grid on
 
+figure(2)
+plot(Time,v)
+hold on
+plot(Time, Voltage/144 + 0.106);
+grid on
+legend('Sim', 'Actual')
+
