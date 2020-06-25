@@ -13,9 +13,9 @@ gamma = 90;
 % h[k]
 states = zeros(4,length(N));
 v = zeros(1,length(N));
-R0 = 0.0082;
+R0 = 0.0083;
 R1 = 0.0158;
-C1 = 19000;
+C1 = 10000;
 F1 = exp(-deltaT/(R1*C1));
 Brc = (1-F1);
 
@@ -31,7 +31,7 @@ M0 = 0.05;
 M = 0.5;
 
 % Initial value
-state(1,1) = 0.8;
+states(1,1) = 0.8;
 
 for n = 1:length(N)-1
     states(1,n+1) = states(1,n) - (deltaT/Q)*eta(n)*i(n);
