@@ -1,0 +1,10 @@
+gear_motor_inertia = 0.0004623733351; % kg*m^2
+wheel_inertia = 0.00046; % kg*m^2
+gear_ratio = 14.4;
+num_wheels = 4;
+vehicle_mass = 162.5; % kg
+driver_mass = 75.5; % kg
+total_mass = vehicle_mass + driver_mass; % kg
+air_density = 1.2753; % kg/m^3
+drag_coef = 1.2;
+front_area = 1.6; % m^2
