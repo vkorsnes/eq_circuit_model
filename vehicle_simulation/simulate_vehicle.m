@@ -18,6 +18,8 @@ rolling_f = rolling_friction*total_mass*g;
 
 
 for n = 1:length(timestamp)-1
+    prev_motor_speed = 0;
+    
     deltaT = abs(timestamp(n)-timestamp(n+1));
     
     des_acc(n) = (des_speed(n) - act_speed(n))/deltaT;
@@ -26,5 +28,14 @@ for n = 1:length(timestamp)-1
     aero_f(n+1) = air_density*front_area*drag_coef*act_speed(n)^2;
     
     dem_mot_torque(n) = (des_acc_f(n) + aero_f(n) + rolling_f)*wheel_radius/gear_ratio;
+    
+    if prev_motor_speed < rated_RPM
+        available_torque = max_torque;
+    else
+        available_torque = max_torque*(rated_RPM/prev_motor_speed);
+    end
+    
+    
+    
     
 end
