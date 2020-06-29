@@ -1,5 +1,6 @@
 gear_motor_inertia = 0.0004623733351; % kg*m^2
 wheel_inertia = 0.00046; % kg*m^2
+wheel_radius = 0.3;
 gear_ratio = 14.4;
 num_wheels = 4;
 vehicle_mass = 162.5; % kg
@@ -8,3 +9,12 @@ total_mass = vehicle_mass + driver_mass; % kg
 air_density = 1.2753; % kg/m^3
 drag_coef = 1.2;
 front_area = 1.6; % m^2
+g = 9.81; % m/s^2
+rolling_friction = 0.03;
+rated_RPM = 12000;
+max_RPM = 20000;
+max_torque = 29;
+max_power = 35000;
+
+rotating_equivalent_mass = (gear_motor_inertia*gear_ratio^2 + num_wheels*wheel_inertia)/wheel_radius^2;
+equivalent_mass = rotating_equivalent_mass + total_mass;
