@@ -1,8 +1,8 @@
 % set up motor: Lmax [Nm], (RPMrated, RPMmax) [RPM], efficiency,
 % inertia [kg/m2]
-motor = setupMotor(116,13500,20000,.95,0.0019);
+motor = setupMotor(29,13500,20000,.95,0.0019);
 % set up wheel: radius [m], inertia [kg/m2], rollCoef
-wheel = setupWheel(0.228,2,0.0111);
+wheel = setupWheel(0.228,0.02,0.0111);
 % set up drivetrain: inverter efficiency, fractional regen torque limit,
 % gear ratio, gear inertia [kg/m2], gear efficiency, for this pack,
 % motor, and wheel 
